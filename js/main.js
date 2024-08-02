@@ -26,7 +26,6 @@ const viewer = new PANOLENS.Viewer({
   container :imageContainer,
   controlBar:false,
   initialLookAt:initialLookposition,
-
 })
 
 
@@ -40,21 +39,20 @@ var infospotPositions= [
 // } );
 
 
-infospot = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospot.position.set( -2136.06, 16.30, 890.14);
+infospot = new PANOLENS.Infospot( 120, PANOLENS.DataImage.Info,true );
+infospot.position.set( 0, 0, -800);
 infospot.addHoverText( "Go to 2nd Image" );
 infospot.addEventListener( 'click', function(){
   viewer.setPanorama( panorama2 );
-  viewer.tweenControlCenter(lookatposition[0])
-
+  viewer.tweenControlCenter(0, 0, -800)
 } );
 
 panorama.add( infospot );
 
 
 
-infospot2= new PANOLENS.Infospot(500,PANOLENS.DataImage.info);
-infospot2.position.set(-3136.06, 296.30, -4290.14)
+infospot2= new PANOLENS.Infospot(120,PANOLENS.DataImage.info);
+infospot2.position.set(800, 0, 0)
 infospot2.addHoverText("GO further");
 infospot2.addEventListener('click',function(){
   viewer.setPanorama(panorama3);
@@ -84,7 +82,7 @@ infospot3_return.position.set(1278.27, 732.65, 4769.19)
 infospot3_return.addHoverText("Back to 2nd image")
 infospot3_return.addEventListener('click',function(){
   viewer.setPanorama(panorama2);
-  viewer.tweenControlCenter(lookatposition[1])
+  viewer.tweenControlCenter(0, 0, -800)
 })
 panorama3.add(infospot3_return)
 
