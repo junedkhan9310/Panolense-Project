@@ -22,7 +22,6 @@ h2{
 
 .image-container{
     height: 26.190rem;
-
     position: relative;
     width: 78%;
     display: block;
@@ -39,7 +38,7 @@ canvas{
 }
 
 
-#desc-container {
+#mountaingood {
     max-width: 500px;
     max-height: 500px;
     min-width: 200px;
@@ -49,19 +48,18 @@ canvas{
     border-radius: 3px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    display: none;
   }
-
-  #desc-container > iframe {
-    border: none;
-    width:100%;
-  }
+#mountaingood
 
   .title {
     font-size: 1.5em;
-    text-align: center;
-    padding: 5px;
+    text-align: right;
+    padding: 15px;
   }
 
   .text {
+    text-justify:auto;
+    text-align: right;
     padding: 0 20px 20px 20px;
   }
