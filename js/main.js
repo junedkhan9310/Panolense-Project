@@ -8,7 +8,7 @@
 //2-adding position and hover text if we want and the adding event listenser
 
 
-const panorama = new PANOLENS.ImagePanorama('images/pano1.jpeg');
+const panorama = new PANOLENS.ImagePanorama('images/pano1.jpg');
 const panorama2= new PANOLENS.ImagePanorama('images/pano5.jpg');
 const panorama3= new PANOLENS.ImagePanorama('images/pano2.jpg');
 
@@ -41,18 +41,18 @@ var infospotPositions= [
 
 infospot = new PANOLENS.Infospot( 120, PANOLENS.DataImage.Info,true );
 infospot.position.set( 0, 0, -800);
-infospot.addHoverText( "Go to 2nd Image" );
+infospot.addHoverElement( document.getElementById( 'mountaingood' ), 200 );
+// infospot.addHoverText( "Go to 2nd Image" );
 infospot.addEventListener( 'click', function(){
   viewer.setPanorama( panorama2 );
-  viewer.tweenControlCenter(0, 0, -800)
 } );
 
 panorama.add( infospot );
 
 
 
-infospot2= new PANOLENS.Infospot(120,PANOLENS.DataImage.info);
-infospot2.position.set(800, 0, 0)
+infospot2= new PANOLENS.Infospot(500,PANOLENS.DataImage.info);
+infospot2.position.set(400.06, 350.30, -4290.14)
 infospot2.addHoverText("GO further");
 infospot2.addEventListener('click',function(){
   viewer.setPanorama(panorama3);
@@ -61,11 +61,11 @@ infospot2.addEventListener('click',function(){
 });
 
 infospot2_return= new PANOLENS.Infospot(500,PANOLENS.DataImage.info);
-infospot2_return.position.set(5000.06, 350.30, -4290.14)
+infospot2_return.position.set(-400.06, 350.30, 4290.14)
 infospot2_return.addHoverText("Return to First");
-infospot2_return.addEventListener('click',function(){
-  viewer.setPanorama(panorama);
-  viewer.tweenControlCenter(lookatposition[1])
+infospot2_return.addEventListener('click', function(){
+   viewer.setPanorama(panorama);
+   viewer.tweenControlCenter(lookatposition[1])
 
 })
 panorama2.add(infospot2,infospot2_return);
